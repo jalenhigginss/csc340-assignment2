@@ -3,62 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Academy | Character Gallery</title>
+    <title>Aura Academy | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="sharingan2.jpg">
 </head>
 <body>
+
     <nav>
+        <div class="nav-content">
+        <a href="index.html" class="logo-link">
+            <img src="sharingan2.png" alt="Aura Logo" class="nav-logo">
+            
+        </a>
         <strong>Aura Tracker</strong>
-        <a href="index.html">Home</a>
-        <a href="details.html">Character Details</a>
-        <a href="about.html">About</a>
+        <div class="nav-links"></div>
+        <a href="index.html">Home</a> | 
+        <a href="details.html">Character Details</a> | 
+        <a href="about.html">About</a> | 
         <a href="contact.html">Add Character</a>
+        </div>
+    </div>
     </nav>
 
-    <header>
-        <h1>Aura Farming Elite</h1>
-        <p>Tracking the most intimidating presences in anime history.</p>
-        
-        <div class="search-container">
-            <input type="text" id="charSearch" placeholder="Search by aura level...">
-            <button type="button">Search</button>
-        </div>
-    </header>
-
-    <main class="gallery">
-        <section class="card">
-            <h2>Gojo Satoru</h2>
-            <p><strong>Aura Level:</strong> Infinite</p>
-            <p>The honored one himself. His aura is so dense it literally stops things from touching him. Maximum efficiency farming.</p>
+    <main>
+        <div class="welcome-container">
+        <img src="aura_index.jpg" 
+             alt="Anime Aesthetic Portal" 
+             class="hero-img">
+        <section class="hero">
+            <h1>Aura Research Institute</h1>
+            <p>The premier database for tracking, analyzing, and farming anime aura.</p>
+            
+            <div class="search-container">
+                <input type="text" id="auraSearch" list="characters" placeholder="Search for a Legend...">
+                <datalist id="characters">
+                    <option value="Gojo Satoru">
+                    <option value="Madara Uchiha">
+                    <option value="Aizen Sosuke">
+                    <option value="Hisoka Morow">
+                    <option value="Eren Yeager">
+                </datalist>
+                <button type="button" onclick="executeSearch()">Find Aura</button>
+            </div>
         </section>
 
-        <section class="card">
-            <h2>Madara Uchiha</h2>
-            <p><strong>Aura Level:</strong> 99,999</p>
-            <p>Showed up to a war alone just to ask if the clones wanted to use Susanoo. Peak "main villain" energy.</p>
-        </section>
-
-        <section class="card">
-            <h2>Aizen Sosuke</h2>
-            <p><strong>Aura Level:</strong> Calculated</p>
-            <p>Stopped the protagonist's theme music with one finger. Insane aura from him right there.</p>
-        </section>
-
-        <section class="card">
-            <h2>Hisoka Morow</h2>
-            <p><strong>Aura Level:</strong> Menacing</p>
-            <p>An aura so creepy it physically paralyzed rookies. He doesn't have your "typical" aura, it's just the most sinister, diabolical lust he has that sets him apart from everyone else.</p>
-        </section>
-
-        <section class="card">
-            <h2>Eren Yeager</h2>
-            <p><strong>Aura Level:</strong> Global Threat</p>
-            <p>From the start it was him who made everything happen, made the entire world tremble; a villian and a best friend, one of the most conflicting and misunderstood characters of all time.</p>
+        <section class="intro" style="text-align: center; padding: 40px;">
+            <h2>Enter the Vault</h2>
+            <p>We monitor five primary subjects known for their infinite presence.</p>
+            <a href="details.html" class="btn">Explore All Subjects</a>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Aura Farming Assignment</p>
     </footer>
-</body>
-</html>
+
+    <script>
+        function executeSearch() {
+            const query = document.getElementById('auraSearch').value.toLowerCase().trim();
+            
+            // Redirect logic based on your request
+            if (query === "gojo" || query === "gojo satoru") {
+                window.location.href = "gojo.html";
+            } else if (query === "madara" || query === "madara uchiha") {
+                window.location.href = "madara.html";
+            } else if (query === "aizen" || query === "aizen sosuke") {
+                window.location.href = "aizen.html";
+            } else if (query === "hisoka" || query === "hisoka morow") {
+                window.location.href = "hisoka.html";
+            } else if (query === "eren" || query === "eren yeager") {
+                window.location.href = "eren.html";
+            } else {
+                // If query is incomplete or not on list, go to Gallery
+                window.location.href = "details.html";
+            }
+        }
+
+        // Allow pressing "Enter" key to trigger search
+        document.getElementById('auraSearch').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                executeSearch();
+            }
+        });
+    </script>
+
+</body> </html>
