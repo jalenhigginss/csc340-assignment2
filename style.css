@@ -164,16 +164,16 @@ ul li:hover {
 
 .brand-name {
     color: var(--accent-color);
-    font-family: 'Orbitron', sans-serif; /* A futuristic font if you have it */
+    font-family: 'Orbitron', sans-serif; 
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* Keep links together */
+
 .nav-links {
     flex-grow: 1;
-    text-align: right; /* Or center if you prefer */
+    text-align: right; 
 }
 
 .logo-link:hover .nav-logo {
